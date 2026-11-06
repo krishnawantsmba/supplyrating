@@ -1,0 +1,19 @@
+{
+  "name": "veniq",
+  "version": "1.0.0",
+  "description": "VenIQ - Enterprise Supplier Intelligence & Risk Management Platform",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=backend\" \"npm run dev --workspace=frontend\"",
+    "build": "cd frontend && npm install && npm run build",
+    "build:all": "npm run build --workspace=backend && npm run build --workspace=frontend",
+    "test": "npm run test --workspace=backend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
